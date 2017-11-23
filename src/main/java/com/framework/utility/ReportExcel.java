@@ -33,7 +33,7 @@ public class ReportExcel {
 				+ new SimpleDateFormat("yyyy_MM_dd").format(
 						Calendar.getInstance().getTime()).toString()+"/";
 		boolean outputFolder = new File(scrReportFolder).mkdir();
-		
+		System.out.println(outputFolder);
 		File reportFile = new File(scrReportFolder+"Report.xls");
     			
     			 String[] s1 = getTagName.toArray(new String[0]); //Collection to array 
@@ -118,7 +118,8 @@ public class ReportExcel {
     				fileOut.close();
     			}
     }
-    public static void setStyleForCell(Cell cell, Workbook wb)
+    @SuppressWarnings("deprecation")
+	public static void setStyleForCell(Cell cell, Workbook wb)
     {
     	CellStyle style = wb.createCellStyle();
         style.setBorderBottom(CellStyle.BORDER_THIN);
