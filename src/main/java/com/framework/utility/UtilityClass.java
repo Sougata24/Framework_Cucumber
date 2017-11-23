@@ -4,7 +4,7 @@ package com.framework.utility;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+//import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -13,7 +13,7 @@ import java.util.Calendar;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.hssf.usermodel.HSSFFont;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
+//import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.usermodel.Cell;
@@ -74,7 +74,8 @@ public class UtilityClass extends BaseClass  implements ITestListener {
 			}
 		}
     
-    public void takeScreenShotOnErr(String methodName, WebDriver driver) {
+    @SuppressWarnings("static-access")
+	public void takeScreenShotOnErr(String methodName, WebDriver driver) {
     	//get the driver
     	
     	 File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
@@ -206,7 +207,8 @@ public class UtilityClass extends BaseClass  implements ITestListener {
     				fileOut.close();
     			}
     }
-    public static void setStyleForCell(Cell cell, Workbook wb)
+    @SuppressWarnings("deprecation")
+	public static void setStyleForCell(Cell cell, Workbook wb)
     {
     	CellStyle style = wb.createCellStyle();
         style.setBorderBottom(CellStyle.BORDER_THIN);
